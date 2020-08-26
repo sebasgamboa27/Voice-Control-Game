@@ -1,0 +1,19 @@
+<span *ngIf="won">
+  <div class="alert alert-success" role="alert">
+    You Won!!!
+  </div>
+</span>
+<h1 class="ml-3">Use your voice to navigate through the maze! Say up, down,left or right!</h1>
+<h1 class="ml-3">{{label}}</h1>
+<div class="row">
+  <button type="button" class="btn btn-success ml-3" (click)="start()">Go</button>
+  <button type="button" class="btn btn-warning ml-3" (click)="clear()">Restart</button>
+</div>
+
+<main>
+  <div *ngFor="let column of board" class="row">
+    <app-node *ngFor="let node of column" [node]="node"></app-node>
+  </div>
+</main>
+
+
